@@ -1,9 +1,9 @@
 <?php
 
-include('../config.php');
+require('../config.php');
 $style=ROOTcss."connect.css";
 $title="Connexion ForumPlus";
-include('includes/header.php'); 
+require('includes/header.php'); 
 
 ?>
 <div class="d-flex flex-column align-items-center justify-content-center">
@@ -14,15 +14,19 @@ include('includes/header.php');
 </section>
 
 <form method="POST" action="#">
-  <div class="mb-3">
-    <label for="email" class="form-label">Nom d'Utilisateur</label>
-    <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp">
+  <div class="mb-5">
+    <label for="username" class="form-label">Nom d'Utilisateur</label>
+    <input type="text" name="username" class="form-control" id="username">
+    <p></p>
   </div>
   <div class="mb-3">
-    <label for="mdp" class="form-label">Mot de passe:</label>
+    <label for="mdp" class="form-label">Mot de passe</label>
     <input type="password" class="form-control" id="mdp" name="mdp">
+    <p></p>
   </div>
   <button type="submit" class="btn d-flex flex-column justify-content-center align-items-center">Se connecter<img src="../images/logowhite.png" alt=""></button>
 </form>
 </div>
-<?php include('includes/footer.php'); ?>
+<script src="../js/sweetalert.min.js"></script>
+<script src="../js/connect.js"></script>
+<?php require('includes/footer.php'); ?>

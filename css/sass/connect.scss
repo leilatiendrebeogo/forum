@@ -1,7 +1,11 @@
+$red:#dc3545;
+$success:#28a745;
+
 body{
     height: 100vh;
 }
 .banner{
+    width: 100%;
     font-size: 1.6rem;
     justify-content: space-between;
     background-color: #087ceb;
@@ -28,7 +32,7 @@ form{
     text-align: center;
     width: 30rem;
     margin: 5rem auto;
-background-color: white;
+    background-color: white;
 
     .btn{
         color: white;

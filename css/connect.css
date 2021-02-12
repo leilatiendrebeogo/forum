@@ -3,6 +3,7 @@ body {
 }
 
 .banner {
+  width: 100%;
   font-size: 1.6rem;
   justify-content: space-between;
   background-color: #087ceb;
