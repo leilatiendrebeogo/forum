@@ -1,0 +1,97 @@
+body {
+  height: 100vh;
+}
+
+.banner {
+  font-size: 1.6rem;
+  justify-content: space-between;
+  background-color: #087ceb;
+  height: 19rem;
+  color: white;
+  font-weight: bolder;
+}
+.banner h2, .banner h4, .banner h5 {
+  padding: 10px;
+  text-align: center;
+}
+.banner h2 {
+  font-size: 2.5em;
+}
+.banner h4 {
+  font-size: 1.5em;
+}
+.banner h5 {
+  font-size: 1em;
+}
+
+form {
+  font-size: 1.6rem;
+  text-align: center;
+  width: 30rem;
+  margin: 5rem auto;
+  background-color: white;
+}
+form .btn {
+  color: white;
+  background-color: #087ceb;
+  padding: 0.5rem 1rem;
+  color: white;
+  margin: auto;
+  width: 15rem;
+  font-size: inherit;
+  font-weight: bold;
+}
+form label {
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+@media screen and (max-width: 300px) {
+  .banner {
+    height: 20vh;
+  }
+
+  h5 {
+    opacity: 0;
+  }
+
+  html {
+    font-size: 24%;
+  }
+
+  footer img {
+    width: 50px;
+  }
+}
+@media screen and (min-width: 300px) and (max-width: 768px) {
+  h5 {
+    opacity: 0;
+  }
+
+  html {
+    font-size: clamp(23.5%,35%,43.5%);
+  }
+
+  footer img {
+    width: 50px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1000px) {
+  html {
+    font-size: clamp(45%,62%,62.5%);
+  }
+
+  .banner h2 {
+    font-size: 1.6em;
+  }
+
+  .banner h4 {
+    font-size: 1.1em;
+  }
+
+  .banner h5 {
+    font-size: 0.9em;
+  }
+}
+
+/*# sourceMappingURL=connect.css.map */

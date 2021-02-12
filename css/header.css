@@ -1,0 +1,69 @@
+*, ::before, ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+header > section {
+  justify-content: space-between;
+}
+header span {
+  font-family: "Arial Black";
+  color: #087ceb;
+}
+header span:nth-child(1) {
+  font-family: "Arial Black";
+  font-weight: normal;
+  color: black;
+}
+
+.user-icons {
+  position: relative;
+  font-size: 1.5rem;
+  width: 20rem;
+  justify-content: space-between;
+}
+.user-icons > a, .user-icons figure {
+  display: block;
+}
+.user-icons figure {
+  position: relative;
+  font-size: 1.5rem;
+}
+.user-icons figure img {
+  width: 2.4em;
+  height: 3.1em;
+}
+.user-icons figure :nth-child(2) {
+  position: absolute;
+  width: 0.7em;
+  height: 0.7em;
+  border-radius: 50%;
+  top: 0.7em;
+  right: 0.2em;
+  background-color: #087ceb;
+}
+.user-icons figure :nth-child(2) span {
+  color: white;
+  font-weight: bolder;
+  font-family: "Arial Black";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.5em;
+}
+.user-icons a > img {
+  width: 2.6em;
+  height: 2.6em;
+}
+.user-icons > a:last-child > img {
+  width: 1.8em;
+  height: 1.8em;
+}
+
+/*# sourceMappingURL=header.css.map */
