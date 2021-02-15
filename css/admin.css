@@ -1,0 +1,253 @@
+* {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.innerPage {
+  margin: 0;
+  transition: margin ease 0.8s;
+}
+
+#checkbox {
+  display: none;
+}
+
+label {
+  cursor: pointer;
+  top: -10px;
+  left: 7px;
+  position: relative;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  z-index: 20;
+  border-radius: 50%;
+  background-color: inherit;
+  transition: all ease 0.8s;
+}
+label span {
+  display: block;
+  width: 20px;
+  height: 3px;
+  background-color: #087ceb;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all ease 0.8s;
+}
+label span::before {
+  cursor: pointer;
+  content: "";
+  position: absolute;
+  top: -6px;
+  display: block;
+  width: 20px;
+  height: 3px;
+  background-color: #087ceb;
+  transform: rotate(0);
+  transition: all ease 0.8s;
+}
+label span::after {
+  cursor: pointer;
+  content: "";
+  position: absolute;
+  top: 6px;
+  display: block;
+  width: 20px;
+  height: 3px;
+  background-color: #087ceb;
+  transform: rotate(0);
+  transition: all ease 0.8s;
+}
+
+.mySideMenu {
+  position: absolute;
+  font-size: 1.6rem;
+  width: 250px;
+  color: white;
+  background-color: #087ceb;
+  text-transform: uppercase;
+  font-family: "Segoe Script";
+  transform: translate(-500px, -43px);
+  transition: transform ease 0.8s;
+}
+.mySideMenu h4 {
+  font-size: 1.3em;
+  text-align: center;
+  padding: 30px 10px;
+  font-weight: bolder;
+  background-color: rgba(255, 255, 255, 0.233);
+}
+.mySideMenu ul {
+  padding: 10px !important;
+}
+.mySideMenu a {
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block;
+  color: white;
+}
+.mySideMenu a:hover {
+  background-color: white;
+  color: #087ceb;
+}
+
+.dark {
+  margin-left: 250px;
+}
+
+#checkbox:checked ~ .mySideMenu {
+  transform: translate(0, -43px);
+}
+
+#checkbox:checked ~ label {
+  background-color: #087ceb;
+}
+
+#checkbox:checked ~ label span, #checkbox:checked ~ label span::after, #checkbox:checked ~ label span::before {
+  height: 0;
+  top: 5px;
+  background-color: white;
+}
+
+#checkbox:checked ~ label span::before {
+  height: 3px;
+  transform: rotate(-45deg);
+}
+
+#checkbox:checked ~ label span::after {
+  height: 3px;
+  transform: rotate(45deg);
+}
+
+.banner {
+  width: 100%;
+  font-size: 1.6rem;
+  justify-content: space-between;
+  background-color: #087ceb;
+  height: 19rem;
+  color: white;
+  font-weight: bolder;
+}
+.banner h2, .banner h4, .banner h5 {
+  padding: 10px;
+  text-align: center;
+}
+.banner h2 {
+  font-size: 2.5em;
+}
+.banner h4 {
+  font-size: 1.5em;
+}
+.banner h5 {
+  font-size: 1em;
+}
+
+.main-section {
+  font-size: 1.6rem;
+}
+.main-section section:first-of-type {
+  width: 100vw;
+  padding-top: 50px;
+  text-align: center;
+  color: #087ceb;
+}
+.main-section section:first-of-type h3 {
+  font-size: 2em;
+  padding: 10px 30px;
+  position: relative;
+}
+.main-section section:first-of-type h3::after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  content: "";
+  display: block;
+  width: 10%;
+  height: 4px;
+  background-color: #087ceb;
+}
+.main-section section:first-of-type > div {
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.main-section section:first-of-type > div div {
+  text-align: center;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 2px solid #087ceb;
+}
+.main-section section:first-of-type span {
+  font-family: "Arial";
+  font-weight: bolder;
+  display: block;
+  font-size: 2.5em;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 5px;
+  text-align: left;
+}
+
+@media screen and (max-width: 300px) {
+  .banner {
+    height: 20vh;
+  }
+
+  h5 {
+    opacity: 0;
+  }
+
+  html {
+    font-size: 24%;
+  }
+
+  footer img {
+    width: 50px;
+  }
+}
+@media screen and (min-width: 300px) and (max-width: 768px) {
+  h5 {
+    opacity: 0;
+  }
+
+  html {
+    font-size: clamp(23.5%,35%,43.5%);
+  }
+
+  footer img {
+    width: 50px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1000px) {
+  html {
+    font-size: clamp(45%,62%,62.5%);
+  }
+
+  .banner h2 {
+    font-size: 1.6em;
+  }
+
+  .banner h4 {
+    font-size: 1.1em;
+  }
+
+  .banner h5 {
+    font-size: 0.9em;
+  }
+}
+
+/*# sourceMappingURL=admin.css.map */

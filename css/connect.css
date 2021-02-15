@@ -42,9 +42,17 @@ form .btn {
   font-size: inherit;
   font-weight: bold;
 }
+form input.error {
+  border: 2px solid #dc3545;
+}
 form label {
   font-weight: bold;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+form p {
+  font-weight: bold;
+  color: #dc3545;
+  font-size: 1.3rem;
 }
 
 @media screen and (max-width: 300px) {
