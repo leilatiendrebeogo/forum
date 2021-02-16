@@ -1,0 +1,167 @@
+* {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.banner {
+  width: 100%;
+  font-size: 1.6rem;
+  justify-content: space-between;
+  background-color: #087ceb;
+  height: 19rem;
+  color: white;
+  font-weight: bolder;
+}
+.banner h2, .banner h4, .banner h5 {
+  padding: 10px;
+  text-align: center;
+}
+.banner h2 {
+  font-size: 2.5em;
+}
+.banner h4 {
+  font-size: 1.5em;
+}
+.banner h5 {
+  font-size: 1em;
+}
+
+.innerPage {
+  font-size: 1.6rem;
+}
+
+.postCard {
+  margin: 3rem auto;
+  width: 60%;
+  border: 2px solid #2469aa;
+  align-items: stretch;
+  position: relative;
+}
+.postCard h4 {
+  font-size: 1.8em;
+  color: white;
+  font-family: "Arial Black";
+  font-weight: bolder;
+  width: 100%;
+  text-align: center;
+  background-color: #2469aa;
+  line-height: 40px;
+}
+.postCard .inner-card-body {
+  width: 100%;
+  padding-bottom: 4rem;
+}
+.postCard header {
+  font-weight: bolder;
+  padding: 0 20px;
+}
+.postCard .dev-icon {
+  font-weight: bolder;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: 1px solid #087ceb;
+  font-size: 2em;
+}
+.postCard header .dev-icon {
+  font-size: 3.5em;
+  width: 8rem;
+  height: 8rem;
+}
+.postCard .comments {
+  left: 6em;
+  position: relative;
+  font-size: 1.3rem !important;
+  width: 60%;
+  background-color: rgba(128, 128, 128, 0.336);
+  border-radius: 0 2.5em;
+}
+.postCard .comments .comment-content {
+  padding: 20px 10px 30px 7px;
+}
+.postCard .comments h5 {
+  font-weight: bolder;
+  font-family: Arial;
+}
+.postCard .comments .dev-icon {
+  background-color: #087ceb;
+  flex-shrink: 0;
+}
+.postCard .comments span {
+  font-weight: bolder;
+  font-size: 0.9em;
+  position: absolute;
+  bottom: 2rem;
+  right: 5rem;
+}
+.postCard .btn {
+  position: absolute;
+  bottom: 2rem;
+  right: 5rem;
+}
+.postCard .btn a {
+  color: white !important;
+  font-size: initial;
+}
+
+input {
+  background: white;
+  outline: none;
+  border: dashed grey 2px;
+}
+
+@media screen and (max-width: 300px) {
+  .banner {
+    height: 20vh;
+  }
+
+  h5 {
+    opacity: 0;
+  }
+
+  html {
+    font-size: 24%;
+  }
+
+  footer img {
+    width: 50px;
+  }
+}
+@media screen and (min-width: 300px) and (max-width: 768px) {
+  h5 {
+    opacity: 0;
+  }
+
+  html {
+    font-size: clamp(23.5%,35%,43.5%);
+  }
+
+  footer img {
+    width: 50px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1000px) {
+  html {
+    font-size: clamp(45%,62%,62.5%);
+  }
+
+  .banner h2 {
+    font-size: 1.6em;
+  }
+
+  .banner h4 {
+    font-size: 1.1em;
+  }
+
+  .banner h5 {
+    font-size: 0.9em;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

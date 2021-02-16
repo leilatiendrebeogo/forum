@@ -4,24 +4,28 @@ include('../../config.php');
 
 
 
-class Posts{
-    protected $postMessage;
-    protected $postAuthor;
+
+
+
+class PostsHandler{
+    protected $post_message;
+    protected $id_author;
     protected $postDate;
-    protected $potsMessage;
-}
-
-
-
-// class PostsHandler{
     
-//     public function __construct()
-//     {
+    public function __construct($id_author,$message)
+    {
+        $this->postAuthor=$id_author;
+        $this->postMessage=$message;
+    }
+
+
+    public function post(string $post_message, object $id_author){
         
-//     }
+    }
 
+    public function getLastPost(string $category){
+        
+    }
 
-//     public function post(string $postMessage, object $authorName){
-
-//     }
-// }
+    
+}

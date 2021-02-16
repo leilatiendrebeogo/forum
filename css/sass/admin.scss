@@ -182,8 +182,10 @@ label{
 
             div{
                 text-align: center;
-                width: 180px;
-                height: 180px;
+                width: 8em;
+                max-width: 10em;
+                height: 8em;
+                max-height: 10em;
                 border-radius: 50%;
                 border: 2px solid #087ceb;
 
@@ -206,12 +208,13 @@ label{
 
 
 table, th, td {
-    border: 1px solid black;
+    text-align: center;
+    border: 2px solid #087ceb;
     border-collapse: collapse;
-  }
+    color: #087ceb;
+}
   th, td {
-    padding: 5px;
-    text-align: left;    
+    padding: 5px;   
   }
 
 
@@ -257,4 +260,19 @@ table, th, td {
     .banner h5{
         font-size: .9em;
     }
+
+}
+
+@media screen and(min-width:1000PX){
+
+.main-section{
+    section:first-of-type{
+        >div{
+            div{
+                width: 11em;
+                height: 11em;
+            }
+        }
+    }
+}
 }

@@ -4,7 +4,7 @@ require('../config.php');
 $style=ROOTcss."admin.css";
 $title="Page d'administration";
 require('includes/header.php');
-$req=$bd->query('SELECT sum(nb_posts) as total_posts,sum(nb_com) as total_com,COUNT(*) as total_devs FROM devs')->fetch(PDO::FETCH_ASSOC);
+// $req=$bd->query('SELECT sum(nb_posts) as total_posts,sum(nb_com) as total_com,COUNT(*) as total_devs FROM devs')->fetch(PDO::FETCH_ASSOC);
 if($req){
     extract($req);
 
@@ -75,12 +75,12 @@ if($req){
     </section>
     <section class="d-flex justify-content-center align-items-center mt-5">
 
-        <table style="border: 1px solid black;">
+        <table>
             <thead>
             <tr>
                 <th rowspan="2">Nom d'utilisateur</th>
-                <th rowspan="2">Nombres de Posts</th>
-                <th rowspan="2">Nombre de commentaires</th>
+                <th id="" rowspan="2">Nombres de Posts</th>
+                <th id="" rowspan="2">Nombre de commentaires</th>
                 <th colspan="2">Dernier Post</th>
                 <th colspan="2">Dernier commentaire</th>
                 <th rowspan="2">Date d'inscription</th>
@@ -93,7 +93,7 @@ if($req){
             </tr>
             </thead>
             <tbody>
-            <?php 
+            <?php
             
             ?>
             </tbody>
