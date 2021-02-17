@@ -1,0 +1,225 @@
+* {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.banner {
+  width: 100%;
+  font-size: 1.6rem;
+  justify-content: space-between;
+  background-color: #087ceb;
+  height: 19rem;
+  color: white;
+  font-weight: bolder;
+}
+.banner h2, .banner h4, .banner h5 {
+  padding: 10px;
+  text-align: center;
+}
+.banner h2 {
+  font-size: 2.5em;
+}
+.banner h4 {
+  font-size: 1.5em;
+}
+.banner h5 {
+  font-size: 1em;
+}
+
+.innerPage {
+  font-size: 1.6rem;
+  margin-top: 8rem;
+}
+
+.invisible {
+  display: none !important;
+}
+
+.postCard {
+  margin: 3rem auto;
+  width: 60%;
+  background-color: white;
+  border: 2px solid #2469aa;
+  align-items: stretch;
+  position: relative;
+}
+.postCard .post-image {
+  width: 80%;
+  height: 350px;
+  background-color: #a1a1a1;
+  border: 2px dashed white;
+  border-radius: 0;
+}
+.postCard h4 {
+  font-size: 1.8em;
+  color: white;
+  font-family: "Arial Black";
+  font-weight: bolder;
+  width: 100%;
+  text-align: center;
+  background-color: #2469aa;
+  line-height: 40px;
+}
+.postCard .inner-card-body {
+  width: 100%;
+  padding-bottom: 4rem;
+}
+.postCard header {
+  font-weight: bolder;
+  padding: 0 20px;
+}
+.postCard .dev-icon {
+  font-weight: bolder;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: 1px solid #087ceb;
+  font-size: 2em;
+}
+.postCard header .dev-icon {
+  font-size: 3.5em;
+  width: 8rem;
+  height: 8rem;
+}
+.postCard input[type=submit] {
+  font-weight: bolder;
+  font-family: sans-serif;
+  color: white;
+  background-color: #087ceb;
+  display: block;
+  margin: auto;
+  padding: 1em 3em;
+}
+.postCard input[type=submit]:first-child {
+  background-color: red;
+}
+
+form {
+  position: relative;
+  margin: 3rem auto;
+  width: 50%;
+  border: 2px solid #2469aa;
+  align-items: stretch;
+  position: relative;
+  background-color: #fdfdfd;
+  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.507);
+}
+form h4 {
+  font-size: 1.8em;
+  color: white;
+  font-family: "Arial Black";
+  font-weight: bolder;
+  width: 90%;
+  text-align: center;
+  background-color: #2469aa;
+  line-height: 4rem;
+  position: absolute;
+  top: -1em;
+}
+form table {
+  border-collapse: collapse;
+}
+form td:first-child {
+  text-align: right;
+}
+form td, form tr {
+  padding: 1em;
+}
+form textarea {
+  resize: none;
+  width: 37rem;
+  height: 25rem;
+  padding: 1rem;
+}
+form input, form textarea, form select {
+  outline: none;
+  padding-left: 7px;
+}
+form input {
+  line-height: 2.5rem;
+}
+form input[type=submit] {
+  font-weight: bolder;
+  font-family: sans-serif;
+  color: white;
+  background-color: #087ceb;
+  display: block;
+  margin: auto;
+  padding: 1em 3em;
+}
+form label {
+  font-weight: 500;
+}
+
+@media screen and (max-width: 300px) {
+  .banner {
+    height: 20vh;
+  }
+
+  h5 {
+    opacity: 0;
+  }
+
+  html {
+    font-size: 24%;
+  }
+
+  footer img {
+    width: 50px;
+  }
+
+  form {
+    width: 80%;
+  }
+}
+@media screen and (min-width: 300px) and (max-width: 768px) {
+  h5 {
+    opacity: 0;
+  }
+
+  html {
+    font-size: clamp(23.5%,35%,43.5%);
+  }
+
+  footer img {
+    width: 50px;
+  }
+
+  form {
+    width: 80%;
+  }
+}
+@media screen and (min-width: 500px) {
+  form {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1000px) {
+  html {
+    font-size: clamp(45%,62%,62.5%);
+  }
+
+  .banner h2 {
+    font-size: 1.6em;
+  }
+
+  .banner h4 {
+    font-size: 1.1em;
+  }
+
+  .banner h5 {
+    font-size: 0.9em;
+  }
+
+  form {
+    width: 80%;
+  }
+}
+
+/*# sourceMappingURL=postEdit.css.map */
