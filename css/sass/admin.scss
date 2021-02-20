@@ -1,278 +1,316 @@
-*{
-    list-style: none;
-    margin: 0;
-    padding: 0;
+* {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-body{
-    height: 100vh;
-    overflow-x: hidden;
+body {
+  height: 100vh;
+  overflow-x: hidden;
 }
-.innerPage{
-    margin: 0;
-    transition: margin ease .8s;
-}
-
-#checkbox{
-    display: none;
+.innerPage {
+  margin: 0;
+  transition: margin ease 0.8s;
 }
 
-label{
-    cursor: pointer;
-    top: -10px;
-    left: 7px;
-    position: relative;
-    display: inline-block;
-    width: 25px;
-    height: 25px;
-    z-index: 20;
-    border-radius: 50%;
-    background-color: inherit;
-    transition:all ease 0.8s ;
-
-    span{
-        display: block;
-        width: 20px;
-        height: 3px;
-        background-color: #087ceb;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        transition: all ease 0.8s;
-    }
-    span::before{
-        cursor: pointer;
-        content: '';
-        position: absolute;
-        top: -6px;
-        display: block;
-        width: 20px;
-        height: 3px;
-        background-color: #087ceb;
-        transform: rotate(0);
-        transition: all ease 0.8s;
-    }
-    span::after{
-        cursor: pointer;
-        content: '';
-        position: absolute;
-        top: 6px;
-        display: block;
-        width: 20px;
-        height: 3px;
-        background-color: #087ceb;
-        transform: rotate(0);
-        transition: all ease 0.8s;
-    }
+#checkbox {
+  display: none;
 }
 
+label[for="checkbox"] {
+  cursor: pointer;
+  top: -10px;
+  left: 7px;
+  position: relative;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  z-index: 20;
+  border-radius: 50%;
+  background-color: inherit;
+  transition: all ease 0.8s;
 
-.mySideMenu{
+  span {
+    display: block;
+    width: 20px;
+    height: 3px;
+    background-color: #087ceb;
     position: absolute;
-    font-size: 1.6rem;
-    width: 250px;
-    color: white;
-    background-color: #087ceb;
-    text-transform: uppercase;
-    font-family: 'Segoe Script';
-    transform: translate(-500px,-43px);
-    transition: transform ease .8s;
-
-    h4{
-        font-size: 1.3em;
-        text-align: center;
-        padding: 30px 10px;
-        font-weight: bolder;
-        background-color: rgba(255, 255, 255, 0.233);
-    }
-    ul{
-        padding: 10px!important;
-    }
-    a{
-        text-decoration: none;
-        padding: 10px 15px;
-        display: block;
-        color: white;
-    }
-    a:hover{
-        background-color: white;
-        color: #087ceb;
-    }
-}
-.dark{
-    margin-left: 250px;
-}
-
-#checkbox:checked ~ .mySideMenu{
-    transform: translate(0,-43px);
-}
-#checkbox:checked ~ label{
-    background-color: #087ceb;
-}
-#checkbox:checked ~ label span,#checkbox:checked ~ label span::after,#checkbox:checked ~ label span::before{
-    height: 0;
-    top: 5px;
-    background-color: white;
-}
-#checkbox:checked ~ label span::before{
-    height: 3px;
-    transform: rotate(-45deg);
-}
-#checkbox:checked ~ label span::after{
-    height: 3px;
-    transform: rotate(45deg);
-}
-
-
-
-
-.banner{
-    width: 100%;
-    font-size: 1.6rem;
-    justify-content: space-between;
-    background-color: #087ceb;
-    height: 19rem;
-    color: white;
-    font-weight: bolder;
-    h2,h4,h5{
-        padding: 10px;
-        text-align: center;
-    }
-    h2{
-        font-size: 2.5em;
-    }
-    h4{
-        font-size: 1.5em;
-    }
-    h5{
-        font-size: 1em;
-    }
-}
-
-.main-section{
-    font-size: 1.6rem;
-    section:first-of-type{
-        width: 100vw;
-        padding-top: 50px;
-        text-align: center;
-        color: #087ceb;
-        
-
-        h3{
-            font-size: 2em;
-            padding: 10px 30px;
-            position: relative;
-        }
-        h3::after{
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            content: '';
-            display: block;
-            width: 10%;
-            height: 4px;
-            background-color: #087ceb;
-        }
-
-
-        >div{
-            justify-content: space-evenly;
-            flex-wrap: wrap;
-
-            div{
-                text-align: center;
-                width: 8em;
-                max-width: 10em;
-                height: 8em;
-                max-height: 10em;
-                border-radius: 50%;
-                border: 2px solid #087ceb;
-
-            }
-        }
-        span{
-            font-family: 'Arial';
-            font-weight: bolder;
-            display: block;
-            font-size: 2.5em;
-        }
-    }
-    section:nth-of-type(2){
-
-    }
-}
-
-
-
-
-
-table, th, td {
-    text-align: center;
-    border: 2px solid #087ceb;
-    border-collapse: collapse;
-    color: #087ceb;
-}
-  th, td {
-    padding: 5px;   
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all ease 0.8s;
   }
-
-
-
-
-
-
-@media screen and(max-width:300px){
-    .banner{
-        height: 20vh;
-    }
-    h5{
-        opacity: 0;
-    }
-    html{
-        font-size: 24%;
-    }
-    footer img{
-        width: 50px;
-    }
-}
-@media screen and(min-width:300px) and(max-width:768px){
-    h5{
-        opacity: 0;
-    }
-    html{
-        font-size: clamp(23.5%,35%,43.5%);
-    }
-    footer img{
-        width: 50px;
-    }
-}
-@media screen and(min-width:768px) and (max-width:1000px){
-    html{
-        font-size: clamp(45%,62%,62.5%);
-    }
-    .banner h2{
-        font-size: 1.6em;
-    }
-    .banner h4{
-        font-size: 1.1em;
-    }
-    .banner h5{
-        font-size: .9em;
-    }
-
+  span::before {
+    cursor: pointer;
+    content: "";
+    position: absolute;
+    top: -6px;
+    display: block;
+    width: 20px;
+    height: 3px;
+    background-color: #087ceb;
+    transform: rotate(0);
+    transition: all ease 0.8s;
+  }
+  span::after {
+    cursor: pointer;
+    content: "";
+    position: absolute;
+    top: 6px;
+    display: block;
+    width: 20px;
+    height: 3px;
+    background-color: #087ceb;
+    transform: rotate(0);
+    transition: all ease 0.8s;
+  }
 }
 
-@media screen and(min-width:1000PX){
+.mySideMenu {
+  position: absolute;
+  font-size: 1.6rem;
+  width: 250px;
+  color: white;
+  background-color: #087ceb;
+  text-transform: uppercase;
+  font-family: "Segoe Script";
+  transform: translate(-500px, -43px);
+  transition: transform ease 0.8s;
 
-.main-section{
-    section:first-of-type{
-        >div{
-            div{
-                width: 11em;
-                height: 11em;
-            }
+  h4 {
+    font-size: 1.3em;
+    text-align: center;
+    padding: 30px 10px;
+    font-weight: bolder;
+    background-color: rgba(255, 255, 255, 0.233);
+  }
+  ul {
+    padding: 10px !important;
+  }
+  a {
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    color: white;
+  }
+  a:hover {
+    background-color: white;
+    color: #087ceb;
+  }
+}
+.dark {
+  margin-left: 250px;
+}
+
+#checkbox:checked ~ .mySideMenu {
+  transform: translate(0, -43px);
+}
+#checkbox:checked ~ label {
+  background-color: #087ceb;
+}
+#checkbox:checked ~ label span,
+#checkbox:checked ~ label span::after,
+#checkbox:checked ~ label span::before {
+  height: 0;
+  top: 5px;
+  background-color: white;
+}
+#checkbox:checked ~ label span::before {
+  height: 3px;
+  transform: rotate(-45deg);
+}
+#checkbox:checked ~ label span::after {
+  height: 3px;
+  transform: rotate(45deg);
+}
+
+.banner {
+  width: 100%;
+  font-size: 1.6rem;
+  justify-content: space-between;
+  background-color: #087ceb;
+  height: 19rem;
+  color: white;
+  font-weight: bolder;
+  h2,
+  h4,
+  h5 {
+    padding: 10px;
+    text-align: center;
+  }
+  h2 {
+    font-size: 2.5em;
+  }
+  h4 {
+    font-size: 1.5em;
+  }
+  h5 {
+    font-size: 1em;
+  }
+}
+
+.main-section {
+  font-size: 1.6rem;
+  section:first-of-type {
+    width: 100vw;
+    padding-top: 50px;
+    text-align: center;
+    color: #087ceb;
+
+    h3 {
+      font-size: 2em;
+      padding: 10px 30px;
+      position: relative;
+    }
+    h3::after {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      content: "";
+      display: block;
+      width: 10%;
+      height: 4px;
+      background-color: #087ceb;
+    }
+
+    > div {
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+
+      div {
+        text-align: center;
+        width: 8em;
+        max-width: 10em;
+        height: 8em;
+        max-height: 10em;
+        border-radius: 50%;
+        border: 2px solid #087ceb;
+      }
+    }
+    span {
+      font-family: "Arial";
+      font-weight: bolder;
+      display: block;
+      font-size: 2.5em;
+    }
+  }
+}
+
+.invisible {
+  display: none;
+}
+
+#formdev-btn {
+  color: white;
+  background-color: #087ceb;
+  padding: 0.3rem 1rem;
+  color: white;
+  margin: auto;
+  outline: none;
+  border: none;
+  width: 15rem;
+  font-size: inherit;
+  font-weight: bold;
+}
+
+.formDev {
+  font-size: 1.6rem;
+  text-align: center;
+  width: 30rem;
+  margin: 5rem auto;
+  background-color: white;
+  animation: anima ease;
+  transition: display ease 0.8s;
+
+  .btn {
+    color: white;
+    background-color: #087ceb;
+    padding: 0.5rem 1rem !important;
+    margin: auto;
+    width: 12rem !important;
+    font-size: inherit;
+    font-weight: bold;
+  }
+  .red {
+    background: #dc3545 !important;
+  }
+  input.error {
+    border: 2px solid #dc3545;
+  }
+  label {
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  p {
+    font-weight: bold;
+    color: #dc3545;
+    font-size: 1.3rem;
+  }
+}
+
+table,
+th,
+td {
+  text-align: center;
+  border: 2px solid #087ceb;
+  border-collapse: collapse;
+  color: #087ceb;
+}
+th,
+td {
+  padding: 5px;
+}
+
+@media screen and(max-width:300px) {
+  .banner {
+    height: 20vh;
+  }
+  h5 {
+    opacity: 0;
+  }
+  html {
+    font-size: 24%;
+  }
+  footer img {
+    width: 50px;
+  }
+}
+@media screen and(min-width:300px) and(max-width:768px) {
+  h5 {
+    opacity: 0;
+  }
+  html {
+    font-size: clamp(23.5%, 35%, 43.5%);
+  }
+  footer img {
+    width: 50px;
+  }
+}
+@media screen and(min-width:768px) and (max-width: 1000px) {
+  html {
+    font-size: clamp(45%, 62%, 62.5%);
+  }
+  .banner h2 {
+    font-size: 1.6em;
+  }
+  .banner h4 {
+    font-size: 1.1em;
+  }
+  .banner h5 {
+    font-size: 0.9em;
+  }
+}
+
+@media screen and(min-width:1000px) {
+  .main-section {
+    section:first-of-type {
+      > div {
+        div {
+          width: 11em;
+          height: 11em;
         }
+      }
     }
-}
+  }
 }

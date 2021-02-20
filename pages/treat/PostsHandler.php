@@ -1,5 +1,5 @@
 <?php
-include('../../config.php');
+
 
 class PostsHandler{
     protected $post_message;

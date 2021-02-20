@@ -1,6 +1,16 @@
 <?php
+// session_start();
 
-require('../config.php');
+// if(isset($_SESSION['username'],$_SESSION['role']) && $_SESSION['role']=='admin')
+//   header('Location: admin.php');
+// elseif(isset($_SESSION['username'],$_SESSION['role']) && $_SESSION['role']=='dev')
+//   header('Location: dev.php');
+// else
+//   header('Location: '.dirname(__FILE__,1).'index.php');
+
+
+
+require_once(dirname(__FILE__,2).'/config.php');
 $style=ROOTcss."connect.css";
 $title="Connexion ForumPlus";
 require('includes/header.php'); 

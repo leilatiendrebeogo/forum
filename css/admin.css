@@ -18,7 +18,7 @@ body {
   display: none;
 }
 
-label {
+label[for=checkbox] {
   cursor: pointer;
   top: -10px;
   left: 7px;
@@ -31,7 +31,7 @@ label {
   background-color: inherit;
   transition: all ease 0.8s;
 }
-label span {
+label[for=checkbox] span {
   display: block;
   width: 20px;
   height: 3px;
@@ -42,7 +42,7 @@ label span {
   transform: translate(-50%, -50%);
   transition: all ease 0.8s;
 }
-label span::before {
+label[for=checkbox] span::before {
   cursor: pointer;
   content: "";
   position: absolute;
@@ -54,7 +54,7 @@ label span::before {
   transform: rotate(0);
   transition: all ease 0.8s;
 }
-label span::after {
+label[for=checkbox] span::after {
   cursor: pointer;
   content: "";
   position: absolute;
@@ -111,7 +111,9 @@ label span::after {
   background-color: #087ceb;
 }
 
-#checkbox:checked ~ label span, #checkbox:checked ~ label span::after, #checkbox:checked ~ label span::before {
+#checkbox:checked ~ label span,
+#checkbox:checked ~ label span::after,
+#checkbox:checked ~ label span::before {
   height: 0;
   top: 5px;
   background-color: white;
@@ -136,7 +138,9 @@ label span::after {
   color: white;
   font-weight: bolder;
 }
-.banner h2, .banner h4, .banner h5 {
+.banner h2,
+.banner h4,
+.banner h5 {
   padding: 10px;
   text-align: center;
 }
@@ -194,14 +198,69 @@ label span::after {
   display: block;
   font-size: 2.5em;
 }
-table, th, td {
+
+.invisible {
+  display: none;
+}
+
+#formdev-btn {
+  color: white;
+  background-color: #087ceb;
+  padding: 0.3rem 1rem;
+  color: white;
+  margin: auto;
+  outline: none;
+  border: none;
+  width: 15rem;
+  font-size: inherit;
+  font-weight: bold;
+}
+
+.formDev {
+  font-size: 1.6rem;
+  text-align: center;
+  width: 30rem;
+  margin: 5rem auto;
+  background-color: white;
+  animation: anima ease;
+  transition: display ease 0.8s;
+}
+.formDev .btn {
+  color: white;
+  background-color: #087ceb;
+  padding: 0.5rem 1rem !important;
+  margin: auto;
+  width: 12rem !important;
+  font-size: inherit;
+  font-weight: bold;
+}
+.formDev .red {
+  background: #dc3545 !important;
+}
+.formDev input.error {
+  border: 2px solid #dc3545;
+}
+.formDev label {
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.formDev p {
+  font-weight: bold;
+  color: #dc3545;
+  font-size: 1.3rem;
+}
+
+table,
+th,
+td {
   text-align: center;
   border: 2px solid #087ceb;
   border-collapse: collapse;
   color: #087ceb;
 }
 
-th, td {
+th,
+td {
   padding: 5px;
 }
 
@@ -228,7 +287,7 @@ th, td {
   }
 
   html {
-    font-size: clamp(23.5%,35%,43.5%);
+    font-size: clamp(23.5%, 35%, 43.5%);
   }
 
   footer img {
@@ -237,7 +296,7 @@ th, td {
 }
 @media screen and (min-width: 768px) and (max-width: 1000px) {
   html {
-    font-size: clamp(45%,62%,62.5%);
+    font-size: clamp(45%, 62%, 62.5%);
   }
 
   .banner h2 {
@@ -252,7 +311,7 @@ th, td {
     font-size: 0.9em;
   }
 }
-@media screen and (min-width: 1000PX) {
+@media screen and (min-width: 1000px) {
   .main-section section:first-of-type > div div {
     width: 11em;
     height: 11em;
