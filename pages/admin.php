@@ -1,30 +1,23 @@
 <?php
-// session_start();
+session_start();
+if(count($_SESSION)==0)
+    header('Location: connect.php');
+elseif(isset($_SESSION['username'],$_SESSION['role'],$_SESSION['dev_id']) && $_SESSION['role']=='dev')
+    header('Location: dev.php');
 
-// if(isset($_SESSION['username'],$_SESSION['role']) && $_SESSION['role']=='admin')
-//   header('Location: admin.php');
-// if(isset($_SESSION['username'],$_SESSION['role']) && $_SESSION['role']=='dev')
-//   header('Location: dev.php');
-// else
-//   header('Location: '.dirname(__FILE__,1).'index.php');
 
 require_once(dirname(__FILE__,2).'/config.php');
 require_once('treat/DevsHandler.php');
 
 $bd=new DataBase();
-if(!isset($_SESSION['username'],$_SESSION['role'])|| empty($_SESSION['username']) || empty($_SESSION['role'])){
-    $data_admin=$bd->getData('r','SELECT username FROM devs WHERE role="admin"');
-    $_SESSION['role']=['admin'];
-    $_SESSION['username']=htmlspecialchars($data_admin['username']);
-}
+
 $style=ROOTcss."admin.css";
 $title="Page d'administration";
-$fonts='<link rel="stylesheet" href="../fonts/css/all.css">';
 require('includes/header.php');
 
 $total_devs=$bd->getData('r','SELECT COUNT(*) as total FROM devs')['total'];
-// $total_posts=$bd->getData('r','SELECT COUNT(*) as total FROM posts')['total'];
-// $total_com=$bd->getData('r','SELECT COUNT(*) as total FROM comments')['total'];
+$total_posts=$bd->getData('r','SELECT COUNT(*) as total FROM posts')['total'];
+$total_com=$bd->getData('r','SELECT COUNT(*) as total FROM comments')['total'];
 
 // $req=$bd->getData('r',
 // 'SELECT devs.username as username, COUNT(*) as nb_posts, COUNT(*) as nb_coms, dateInscript 
@@ -61,6 +54,7 @@ FORM;
 
 ?>
 <input type="checkbox" id="checkbox">
+<div class="voile"></div>
 <label for="checkbox">
     <span></span>
 </label>
@@ -96,7 +90,7 @@ FORM;
         </li>
         <li>
             <a href="">
-                
+            <i class="fas fa-sign-out-alt"></i>
                 Se déconnecter
             </a>
         </li>
@@ -115,15 +109,15 @@ FORM;
         <h3>Statistiques des membres</h3>
         <div class="d-flex mt-5">
             <div class="d-flex flex-column justify-content-center align-items-center members">
-                <span class="total_dev"></span>
+                <span><?= $total_devs ?></span>
                 membres
             </div>
             <div class="d-flex flex-column justify-content-center align-items-center posts">
-                <span></span>
+                <span><?= $total_posts ?></span>
                 publications
             </div>
             <div class="d-flex flex-column justify-content-center align-items-center comments">
-                <span></span>
+                <span><?= $total_com ?></span>
                 commentaires
             </div>
         </div>
@@ -161,4 +155,5 @@ FORM;
 </section>
 <script src="../js/sweetalert.min.js"></script>
 <script src="../js/admin.js"></script>
+<script src="../js/notif.js"></script>
 <?php require('includes/footer.php'); ?>

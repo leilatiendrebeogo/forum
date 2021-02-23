@@ -1,20 +1,22 @@
 <?php
-error_reporting(0);
-require('../config.php');
+if(count($_SESSION)==0)
+    header('Location: connect.php');
+require_once('../config.php');
 $style=ROOTcss."postEdit.css";
 $title="Edition Publication";
-$req=$bd->query('SELECT nom FROM category');
-$categories=$req->fetchAll(PDO::FETCH_ASSOC);
-require('includes/header.php');
+$bd=new DataBase();
+$categories=$bd->getData('r','SELECT category_name FROM categories');
+$fonts='<link rel="stylesheet" href="../fonts/css/all.css">';
+require_once('includes/header.php');
 
 ?>
-
 <section class="banner d-flex flex-column align-items-center">
     <h2>Bienvenue ForumPLus</h2>
     <h4>Forum d'aide et de conseils à l'endroit des développeurs de LacSoft Enterprises</h4>
     <h5>Postez vos préocupations et questions liées aux développement, Aidez les autres en répondant aux questions posées via les commentaires</h5>
 </section>
 <section class="innerPage">
+<a href="" class="btn btn-danger"><i class="fas fa-arrow-left"></i> Retouner à la page précédente</a>
 <div class="d-flex flex-column align-items-center postCard invisible">
     <h4>Aperçu du post</h4>
     <section class="inner-card-body">
@@ -28,6 +30,7 @@ require('includes/header.php');
                 2020-02-01
             </div>
         </header>
+        <h5></h5>
         <div class="post-text p-5">
            
         </div>
@@ -62,7 +65,7 @@ require('includes/header.php');
                         <td>
                             <select name="category" id="category">
                                 <?php foreach($categories as $category ): ?>
-                                    <option><?= $category['nom'] ?></option>
+                                    <option><?= $category['category_name'] ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </td>
@@ -93,13 +96,6 @@ require('includes/header.php');
             </form>
 
 
-
-
-
-
-
-
-
 </div>
 </section>
 
@@ -110,7 +106,7 @@ require('includes/header.php');
 
 
 
-
+<script src="../js/notif.js"></script>
 <script src="../js/sweetalert.min.js"></script>
 <script src="../js/sendPost.js"></script>
 <?php require('includes/footer.php'); ?>

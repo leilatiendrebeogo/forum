@@ -1,12 +1,5 @@
 <?php
-// session_start();
-
-// if(isset($_SESSION['username'],$_SESSION['role']) && $_SESSION['role']=='admin')
-//   exit('admin.php');
-// elseif(isset($_SESSION['username'],$_SESSION['role']) && $_SESSION['role']=='dev')
-//   exit('dev.php');
-// else
-//   header('Location: '.dirname(__FILE__,1).'index.php');
+session_start();
 
 require_once('../../config.php');
 require_once('./DevsHandler.php');
@@ -18,7 +11,12 @@ if(!empty($_POST)){
     if (count($_POST)==2) {
         if(isset($username,$mdp) && !empty($username) && !empty($mdp)){
             $dev=new DevHandler($bd=new DataBase(),$username,$mdp);
-            echo $dev->connect();
+            $_SESSION['dev_id']=$dev->connect()[1];
+            $_SESSION['role']=$dev->connect()[2];
+            $_SESSION['username']=$dev->connect()[3];
+            if(count($dev->connect())>4)
+                $_SESSION['switch']=$dev->connect()[4];
+            echo $dev->connect()[0];
         } else echo('wrong data');
             
     } elseif(count($_POST)==3){

@@ -23,7 +23,7 @@ header span:nth-child(1) {
 
 .user-icons {
   position: relative;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   width: 20rem;
   justify-content: space-between;
 }
@@ -56,14 +56,6 @@ header span:nth-child(1) {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 0.5em;
-}
-.user-icons a > img {
-  width: 2.6em;
-  height: 2.6em;
-}
-.user-icons > a:last-child > img {
-  width: 1.8em;
-  height: 1.8em;
 }
 
 /*# sourceMappingURL=header.css.map */

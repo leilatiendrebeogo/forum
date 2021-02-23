@@ -34,35 +34,18 @@ body {
 
 .innerPage {
   font-size: 1.6rem;
-  margin-top: 8rem;
-}
-
-.invisible {
-  display: none !important;
-}
-
-.btn {
-  font-size: 1.6rem;
 }
 
 .postCard {
   margin: 3rem auto;
   width: 60%;
-  background-color: white;
   border: 2px solid #2469aa;
   align-items: stretch;
   position: relative;
 }
 .postCard h5 {
-  font-size: 2.2em;
+  font-size: 1.5em;
   text-align: center;
-}
-.postCard .post-image {
-  width: 80%;
-  height: 350px;
-  background-color: #a1a1a1;
-  border: 2px dashed white;
-  border-radius: 0;
 }
 .postCard h4 {
   font-size: 1.8em;
@@ -95,74 +78,33 @@ body {
   width: 8rem;
   height: 8rem;
 }
-.postCard input[type=submit] {
-  font-weight: bolder;
-  font-family: sans-serif;
-  color: white;
-  background-color: #087ceb;
-  display: block;
-  margin: auto;
-  padding: 1em 3em;
+.postCard .btn {
+  position: absolute;
+  bottom: 2rem;
+  right: 5rem;
 }
-.postCard input[type=submit]:first-child {
-  background-color: red;
+.postCard .btn a {
+  color: white !important;
+  font-size: initial;
 }
 
-form {
-  position: relative;
-  margin: 3rem auto;
-  width: 50%;
-  border: 2px solid #2469aa;
-  align-items: stretch;
-  position: relative;
-  background-color: #fdfdfd;
-  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.507);
-}
-form h4 {
-  font-size: 1.8em;
-  color: white;
-  font-family: "Arial Black";
-  font-weight: bolder;
-  width: 90%;
-  text-align: center;
-  background-color: #2469aa;
-  line-height: 4rem;
-  position: absolute;
-  top: -1em;
-}
-form table {
-  border-collapse: collapse;
-}
-form td:first-child {
-  text-align: right;
-}
-form td, form tr {
-  padding: 1em;
-}
-form textarea {
-  resize: none;
-  width: 37rem;
-  height: 25rem;
-  padding: 1rem;
-}
-form input, form textarea, form select {
+input {
+  background: white;
   outline: none;
-  padding-left: 7px;
+  border: dashed grey 2px;
 }
-form input {
-  line-height: 2.5rem;
-}
-form input[type=submit] {
-  font-weight: bolder;
-  font-family: sans-serif;
-  color: white;
+
+#edit-btn {
+  text-align: center;
   background-color: #087ceb;
-  display: block;
+  padding: 0.3rem 1rem;
+  color: white;
   margin: auto;
-  padding: 1em 3em;
-}
-form label {
-  font-weight: 500;
+  outline: none;
+  border: none;
+  width: 15rem;
+  font-size: 1.6em;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 300px) {
@@ -181,10 +123,6 @@ form label {
   footer img {
     width: 50px;
   }
-
-  form {
-    width: 80%;
-  }
 }
 @media screen and (min-width: 300px) and (max-width: 768px) {
   h5 {
@@ -197,15 +135,6 @@ form label {
 
   footer img {
     width: 50px;
-  }
-
-  form {
-    width: 80%;
-  }
-}
-@media screen and (min-width: 500px) {
-  form {
-    width: 50%;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1000px) {
@@ -224,10 +153,6 @@ form label {
   .banner h5 {
     font-size: 0.9em;
   }
-
-  form {
-    width: 80%;
-  }
 }
 
-/*# sourceMappingURL=postEdit.css.map */
+/*# sourceMappingURL=dev.css.map */

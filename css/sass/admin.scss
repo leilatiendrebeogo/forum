@@ -67,8 +67,10 @@ label[for="checkbox"] {
 }
 
 .mySideMenu {
+  height: 100vh;
   position: absolute;
   font-size: 1.6rem;
+  z-index: 16;
   width: 250px;
   color: white;
   background-color: #087ceb;
@@ -89,7 +91,7 @@ label[for="checkbox"] {
   }
   a {
     text-decoration: none;
-    padding: 10px 15px;
+    padding: 15px;
     display: block;
     color: white;
   }
@@ -101,6 +103,22 @@ label[for="checkbox"] {
 .dark {
   margin-left: 250px;
 }
+.voile{
+  z-index: 10;
+  width: 5px;
+  height: 5px;
+  background-color: rgba(0, 0, 0, 0.315);
+  border-radius: 50%;
+  position: absolute;
+  left: 7px;
+  top: 50px;
+  transform: scale(0);
+  transition: transform ease .9s;
+}
+#checkbox:checked ~ .voile{
+  transform: scale(2000);
+}
+
 
 #checkbox:checked ~ .mySideMenu {
   transform: translate(0, -43px);

@@ -1,13 +1,9 @@
 <?php
-// session_start();
-
-// if(isset($_SESSION['username'],$_SESSION['role']) && $_SESSION['role']=='admin')
-//   header('Location: admin.php');
-// elseif(isset($_SESSION['username'],$_SESSION['role']) && $_SESSION['role']=='dev')
-//   header('Location: dev.php');
-// else
-//   header('Location: '.dirname(__FILE__,1).'index.php');
-
+session_start();
+if(isset($_SESSION['username'],$_SESSION['role'],$_SESSION['dev_id']) && $_SESSION['role']=='admin')
+  header('Location: admin.php');
+elseif(isset($_SESSION['username'],$_SESSION['role'],$_SESSION['dev_id']) && $_SESSION['role']=='dev')
+  header('Location: dev.php');
 
 
 require_once(dirname(__FILE__,2).'/config.php');

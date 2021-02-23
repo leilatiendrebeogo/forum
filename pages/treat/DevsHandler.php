@@ -40,14 +40,14 @@ class DevHandler{
 
     public function connect()
     {
-        $data=$this->bd->getData('r','SELECT username,mdp,role FROM devs WHERE username=?',[$this->username]);
+        $data=$this->bd->getData('r','SELECT id,username,mdp,role FROM devs WHERE username=?',[$this->username]);
         if(!$data)
             die('wrong data');
         elseif($data['username']==$this->username && password_verify($this->mdp,$data['mdp'])) {
             if($data['role']=='admin')
-                return 'admin.php';
+                return ['admin.php',$data['id'],$data['role'],$data['username'],"off"];
             elseif($data['role']=='dev')
-                return 'dev.php?dev_name='.$data['username'];
+                return ['dev.php',$data['id'],$data['role'],$data['username']];
         }
     }
 

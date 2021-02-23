@@ -62,7 +62,11 @@ let verifFormValidity =()=> {
 
 
 
-
+document.querySelector('.btn.btn-danger').addEventListener('click',(e)=>{
+  e.preventDefault();
+  if(confirm('Voulez-vous vraiment quitter en supprimant la publication en cours ?'))
+    window.location.href='dev.php'
+})
 
 
 
@@ -75,6 +79,7 @@ form.addEventListener("submit", (e) => {
     let isok=verifFormValidity()
   if (isok) {
     postCard.querySelector(".post-text").innerText = form.content.value;
+    postCard.querySelector("h5").innerText = form.title.value;
     form.classList.add("invisible");
     postCard.classList.remove("invisible");
     if(!form.file.value){
@@ -101,18 +106,18 @@ postCard.querySelector('#return').addEventListener('click',(e)=>{
     postCard.classList.add("invisible");
 })
 postCard.querySelector('#validation').addEventListener('click',(e)=>{
-    fetch('treat/PostHandler.php',{
+    fetch('treat/sendPost.php',{
         method:'POST',
         body:new FormData(form),
     }).then(resp => resp.text()).then((resp)=>{
-        if (/[.php]$/.test(resp)){
+        if (resp=='posted'){
             swal({
                 title: "Post Publié!",
                 text:
                   "Cliquez sur OK pour quitter!",
-                icon: "succes",
+                icon: "success",
                 button: "OK",
-            });
+            }).then(resp => window.location.href='dev.php')
         } else 
             swal({
                 title: "Une erreur est survenue!",

@@ -42,47 +42,20 @@ body{
 
 
 
-
-
-
-
-
-
 .innerPage{
-    font-size: 1.6rem;
-    margin-top: 8rem;
-}
-
-
-
-.invisible{
-    display: none!important;
-}
-
-.btn{
     font-size: 1.6rem;
 }
 
 .postCard{
     margin: 3rem auto;
     width: 60%;
-    background-color: white;
     border: 2px solid #2469aa;
     align-items: stretch;
     position: relative;
 
-
     h5{
-        font-size:2.2em;
+        font-size:1.5em;
         text-align: center;
-    }
-
-    .post-image{
-        width: 80%;
-        height: 350px;
-        background-color: #a1a1a1;
-        border: 2px dashed white;
-        border-radius: 0;
     }
 
     h4{
@@ -117,98 +90,40 @@ body{
         width: 8rem;
         height: 8rem;
     }
-    input[type="submit"]{
-        font-weight: bolder;
-        font-family: sans-serif;
-        color: white;
-        background-color: #087ceb;
-        display: block;
-        margin: auto;
-        padding: 1em 3em;
-    }
-    input[type="submit"]:first-child{
-        background-color: red;
-    }
     
-}
-
-
-
-
-
-
-
-
-
-
-
-form{
-    position: relative;
-    margin: 3rem auto;
-    width: 50%;
-    border: 2px solid #2469aa;
-    align-items: stretch;
-    position: relative;
-    background-color: #fdfdfd;
-    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.507);
-
     
+    
+    .btn{
 
-    h4{
-        font-size: 1.8em;
-        color: white;
-        font-family: 'Arial Black';
-        font-weight: bolder;
-        width: 90%;
-        text-align: center;
-        background-color: #2469aa;
-        line-height: 4rem;
         position: absolute;
-        top: -1em;
-    }
+        bottom: 2rem;
+        right: 5rem;
 
-    table{
-        border-collapse: collapse;
+        a{
+            color: white!important;
+            font-size: initial;
+        }
     }
-    td:first-child{
-        text-align: right;
-    }
-    td,tr{
-        padding: 1em;
-    }
-
-    textarea{
-        resize: none;
-        width: 37rem;
-        height: 25rem;
-        padding: 1rem;
-    }
-    input,textarea,select{
-        outline: none;
-        padding-left: 7px;
-    }
-    input{
-        line-height: 2.5rem;
-    }
-
-    input[type="submit"]{
-        font-weight: bolder;
-        font-family: sans-serif;
-        color: white;
-        background-color: #087ceb;
-        display: block;
-        margin: auto;
-        padding: 1em 3em;
-    }
-
-    label{
-        font-weight: 500;
-    }
+}
+input{
+    background:white;
+    outline: none;
+    border: dashed grey 2px;
 }
 
 
-
-
+#edit-btn {
+    text-align: center;
+    background-color: #087ceb;
+    padding: 0.3rem 1rem;
+    color: white;
+    margin: auto;
+    outline: none;
+    border: none;
+    width: 15rem;
+    font-size: 1.6em;
+    font-weight: bold;
+}
 
 
 @media screen and(max-width:300px){
@@ -224,9 +139,6 @@ form{
     footer img{
         width: 50px;
     }
-    form{
-        width: 80%;
-    }
 }
 @media screen and(min-width:300px) and(max-width:768px){
     h5{
@@ -237,14 +149,6 @@ form{
     }
     footer img{
         width: 50px;
-    }
-    form{
-        width: 80%;
-    }
-}
-@media screen and (min-width:500px){
-    form{
-        width: 50%;
     }
 }
 @media screen and(min-width:768px) and (max-width:1000px){
@@ -259,8 +163,5 @@ form{
     }
     .banner h5{
         font-size: .9em;
-    }
-    form{
-        width: 80%;
     }
 }

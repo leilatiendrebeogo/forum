@@ -1,5 +1,5 @@
 let form = document.querySelector("form");
-
+document.querySelector('.user-icons').innerHTML='';
 let data = form.querySelectorAll("input");
 let isOk = true;
 

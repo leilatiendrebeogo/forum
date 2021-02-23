@@ -1,10 +1,9 @@
 <?php
 session_start();
-require_once('config.php');
-
-if(empty($_SESSION))
+if(count($_SESSION)==0){
+    require_once('config.php');
     $bd->existAdmin();
-elseif($_SESSION['role']=='admin')
+}elseif(isset($_SESSION['username'],$_SESSION['role'],$_SESSION['dev_id']) && $_SESSION['role']=='admin')
     header('Location: pages/admin.php');
-elseif($_SESSION['role']=='dev')
+elseif(isset($_SESSION['username'],$_SESSION['role'],$_SESSION['dev_id']) && $_SESSION['role']=='dev')
     header('Location: pages/dev.php');

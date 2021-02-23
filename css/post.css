@@ -34,14 +34,27 @@ body {
 
 .innerPage {
   font-size: 1.6rem;
+  margin-top: 8rem;
 }
 
 .postCard {
   margin: 3rem auto;
   width: 60%;
+  background-color: white;
   border: 2px solid #2469aa;
   align-items: stretch;
   position: relative;
+}
+.postCard h5 {
+  font-size: 2.2em;
+  text-align: center;
+}
+.postCard .post-image {
+  width: 80%;
+  height: 350px;
+  background-color: #a1a1a1;
+  border: 2px dashed white;
+  border-radius: 0;
 }
 .postCard h4 {
   font-size: 1.8em;
@@ -74,7 +87,17 @@ body {
   width: 8rem;
   height: 8rem;
 }
-.postCard .comments {
+.postCard input[type=submit] {
+  font-weight: bolder;
+  font-family: sans-serif;
+  color: white;
+  background-color: #087ceb;
+  display: block;
+  margin: auto;
+  padding: 1em 3em;
+}
+
+.comments {
   left: 6em;
   position: relative;
   font-size: 1.3rem !important;
@@ -82,38 +105,52 @@ body {
   background-color: rgba(128, 128, 128, 0.336);
   border-radius: 0 2.5em;
 }
-.postCard .comments .comment-content {
+.comments .dev-icon {
+  font-weight: bolder;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: 1px solid #087ceb;
+  font-size: 2em;
+}
+.comments .comment-content {
   padding: 20px 10px 30px 7px;
 }
-.postCard .comments h5 {
+.comments h5 {
   font-weight: bolder;
   font-family: Arial;
 }
-.postCard .comments .dev-icon {
+.comments .dev-icon {
   background-color: #087ceb;
   flex-shrink: 0;
 }
-.postCard .comments span {
+.comments span {
   font-weight: bolder;
   font-size: 0.9em;
   position: absolute;
   bottom: 2rem;
   right: 5rem;
 }
-.postCard .btn {
-  position: absolute;
-  bottom: 2rem;
-  right: 5rem;
-}
-.postCard .btn a {
-  color: white !important;
-  font-size: initial;
-}
 
-input {
-  background: white;
-  outline: none;
-  border: dashed grey 2px;
+.my_comment .comments {
+  margin-top: 120px;
+  width: 40%;
+  left: -8em;
+  border-radius: 2.5em;
+}
+.my_comment textarea {
+  resize: none;
+  display: block;
+  margin: auto;
+  width: 80%;
+}
+.my_comment button {
+  display: block;
+  margin: 20px auto 0;
+  width: 17rem;
+  background: #087ceb;
+  border: none;
+  font-size: 1.8em;
 }
 
 @media screen and (max-width: 300px) {
@@ -132,6 +169,10 @@ input {
   footer img {
     width: 50px;
   }
+
+  form {
+    width: 80%;
+  }
 }
 @media screen and (min-width: 300px) and (max-width: 768px) {
   h5 {
@@ -144,6 +185,15 @@ input {
 
   footer img {
     width: 50px;
+  }
+
+  form {
+    width: 80%;
+  }
+}
+@media screen and (min-width: 500px) {
+  form {
+    width: 50%;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1000px) {
@@ -162,6 +212,10 @@ input {
   .banner h5 {
     font-size: 0.9em;
   }
+
+  form {
+    width: 80%;
+  }
 }
 
-/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=post.css.map */
