@@ -1,4 +1,28 @@
 <?php
+if (isset($_SESSION['switch'])) {
+    if($_SESSION['switch']=='on'){
+        $admin_stuff=<<<ADMIN
+        <div class="d-flex modes">
+        <a href=""></a>
+            <h6 class="d-flex justify-content-center align-items-center admin">Mode Administrateur</h6>
+            <h6 class="d-flex justify-content-center align-items-center btn-primary dev">Mode Dévéloppeur</h6>
+        </div>
+ADMIN;
+    }
+    else{
+        $admin_stuff=<<<ADMIN
+        <a href="">
+            <div class="d-flex modes">
+            <h6 class="d-flex justify-content-center align-items-center btn-primary admin">Mode Administrateur</h6>
+            <h6 class="d-flex justify-content-center align-items-center dev">Mode Dévéloppeur</h6>
+            </div>
+        </a>
+        
+ADMIN;
+    }
+}
+
+
 
 ?>
 
@@ -12,16 +36,20 @@
     <link rel="stylesheet" href="../fonts/css/all.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="<?= $style; ?>">
+    <script src="../js/sweetalert.min.js"></script>
     <title><?= $title; ?></title>
 </head>
 <body>
 
 
 <header class="container-fluid ">
-    <section class="innerHeader d-flex">
+    <section class="innerHeader d-flex justify-content-between">
         <div class="enseigne">
-            <h1><span class="part1">FORUM</span><span class="part2">PLUS</span></h1>
+            <a href="dev.php">
+                <h1><span class="part1">FORUM</span><span class="part2">PLUS</span></h1>
+            </a>
         </div>
+        <?php if(isset($admin_stuff)) echo $admin_stuff; ?>
         <div class="user-icons d-flex">
             <a href="#" title="Notifications">
                 <figure>
@@ -29,13 +57,13 @@
                     <div><span>4</span></div>
                 </figure>
             </a>
-            <a href="#" title="Editer un post">
+            <a href="postEdit.php" title="Editer un post">
                 <i class="fas fa-edit"></i>
             </a>
-            <a href="#" title="Voir mes statistiques">
+            <a href="../stats.php" title="Voir mes statistiques">
                 <i class="fas fa-chart-line"></i>
             </a>
-            <a href="" title="Se déconnecter" class="logout">
+            <a href="#" title="Se déconnecter" class="logout">
                 <i class="fas fa-sign-out-alt"></i>
             </a>
         </div>

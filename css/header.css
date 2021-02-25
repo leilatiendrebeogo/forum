@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -19,6 +23,22 @@ header span:nth-child(1) {
   font-family: "Arial Black";
   font-weight: normal;
   color: black;
+}
+header .modes {
+  position: relative;
+  top: -7px;
+}
+header .modes h6 {
+  cursor: pointer;
+  border: 1px solid #087ceb;
+  font-family: "Verdana";
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 7px;
+  color: #087ceb;
+}
+header .modes h6.btn-primary {
+  color: white !important;
 }
 
 .user-icons {

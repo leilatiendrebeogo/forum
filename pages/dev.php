@@ -5,6 +5,11 @@ if(count($_SESSION)==0)
 elseif(isset($_SESSION['username'],$_SESSION['role'],$_SESSION['dev_id']) && $_SESSION['role']=='admin')
     header('Location: admin.php');
 
+if($_SESSION['role']=='admin' && $_SESSION['switch']=='off'){
+    $_SESSION['role']='dev';
+    $_SESSION['switch']='on';
+}
+
 
 
 require_once(dirname(__FILE__,2).'/config.php');

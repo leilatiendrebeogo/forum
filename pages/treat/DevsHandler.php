@@ -17,8 +17,22 @@ class DevHandler{
         $this->email=$email;
         $this->mdp=$mdp;   
     }
-    public static function getDevStats(string $stats_type){
-        
+    public static function getDevStats(DataBase $bd){
+        $members_infos=$bd->getData('r',
+            'SELECT devs.username as username,
+            (SELECT COUNT(posts.id) FROM posts WHERE devs.id=posts.author_ID) as nb_posts,
+            (SELECT COUNT(comments.id) FROM comments WHERE comments.id=devs.id) as nb_comments,
+            DATE_FORMAT(devs.dateInscript,"le %d/%m/%y") as date
+            FROM devs
+            LEFT JOIN posts
+            ON devs.id=posts.author_ID
+            LEFT JOIN comments
+            ON comments.author_ID=devs.id
+            GROUP BY username
+            HAVING username<>(SELECT username FROM devs WHERE role="admin")');
+
+        return $members_infos;
+
     }
 
 

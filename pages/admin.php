@@ -1,15 +1,18 @@
 <?php
 session_start();
+
 if(count($_SESSION)==0)
     header('Location: connect.php');
-elseif(isset($_SESSION['username'],$_SESSION['role'],$_SESSION['dev_id']) && $_SESSION['role']=='dev')
+elseif(isset($_SESSION['role'],$_SESSION['switch']) &&$_SESSION['role']=='dev' && $_SESSION['switch']=='on'){
+    $_SESSION['role']='admin';
+    $_SESSION['switch']='off';
+}elseif(isset($_SESSION['username'],$_SESSION['role'],$_SESSION['dev_id']) && $_SESSION['role']=='dev')
     header('Location: dev.php');
 
 
 require_once(dirname(__FILE__,2).'/config.php');
 require_once('treat/DevsHandler.php');
 
-$bd=new DataBase();
 
 $style=ROOTcss."admin.css";
 $title="Page d'administration";
@@ -19,13 +22,7 @@ $total_devs=$bd->getData('r','SELECT COUNT(*) as total FROM devs')['total'];
 $total_posts=$bd->getData('r','SELECT COUNT(*) as total FROM posts')['total'];
 $total_com=$bd->getData('r','SELECT COUNT(*) as total FROM comments')['total'];
 
-// $req=$bd->getData('r',
-// 'SELECT devs.username as username, COUNT(*) as nb_posts, COUNT(*) as nb_coms, dateInscript 
-// FROM devs 
-// INNER JOIN posts 
-// ON devs.id=posts.ID_author
-// INNER JOIN comments
-// ON devs.id=comments.ID_author');
+$members_infos=DevHandler::getDevStats($bd);
 
 
 $formDev=<<<FORM
@@ -105,11 +102,11 @@ FORM;
 </section>
 <section class="main-section">
     <div><?= $formDev ?></div>
-    <section>
-        <h3>Statistiques des membres</h3>
+    <section class="first-section">
+        <h3>Statistiques Générales</h3>
         <div class="d-flex mt-5">
             <div class="d-flex flex-column justify-content-center align-items-center members">
-                <span><?= $total_devs ?></span>
+                <span><?= $total_devs-1 ?></span>
                 membres
             </div>
             <div class="d-flex flex-column justify-content-center align-items-center posts">
@@ -125,19 +122,19 @@ FORM;
     <div class='d-flex flex-column align-items-center justify-content-center formdev-btn mt-5'>
         <button id="formdev-btn">Inscrire un dévelloppeur</button>
     </div>
-    <section class="d-flex justify-content-center align-items-center mt-5">
+    <section class="d-flex justify-content-center align-items-center mt-5 table_info">
 
         <table>
             <thead>
             <tr>
                 <th rowspan="2">Nom d'utilisateur</th>
-                <th id="" rowspan="2">Nombres de Posts</th>
-                <th id="" rowspan="2">Nombre de commentaires</th>
-                <th colspan="2">Dernier Post</th>
-                <th colspan="2">Dernier commentaire</th>
+                <th rowspan="2">Nombres de Posts</th>
+                <th rowspan="2">Nombre de commentaires</th>
+                <th class="disappear" colspan="2">Dernier Post</th>
+                <th class="disappear" colspan="2">Dernier commentaire</th>
                 <th rowspan="2">Date d'inscription</th>
             </tr>
-            <tr>
+            <tr class="disappear">
                 <th>Catégories</th>
                 <th>Date</th>
                 <th>Catégories</th>
@@ -145,7 +142,21 @@ FORM;
             </tr>
             </thead>
             <tbody>
-            <?php ?>
+            <?php foreach($members_infos as $member_info):?>
+
+                <tr>
+                    <td><strong><?= $member_info['username'] ?></strong></td>
+                    <td><?= $member_info['nb_posts'] ?></td>
+                    <td><?= $member_info['nb_comments'] ?></td>
+                    <td class="disappear">zddzffzfss</td>
+                    <td class="disappear">zddzffzfss</td>
+                    <td class="disappear">zddzffzfss</td>
+                    <td class="disappear">zddzffzfss</td>
+                    <td><?= $member_info['date'] ?></td>
+                </tr>
+
+            <?php endforeach?>
+            
             </tbody>
         </table>
 

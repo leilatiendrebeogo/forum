@@ -1,6 +1,13 @@
 <?php
+session_start();
 if(count($_SESSION)==0)
     header('Location: connect.php');
+
+if($_SESSION['role']=='admin' && $_SESSION['switch']=='off'){
+    $_SESSION['role']='dev';
+    $_SESSION['switch']='on';
+}
+    
 require_once('../config.php');
 $style=ROOTcss."postEdit.css";
 $title="Edition Publication";

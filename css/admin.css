@@ -219,6 +219,7 @@ label[for=checkbox] span::after {
 }
 
 .invisible {
+  visibility: hidden;
   display: none;
 }
 
@@ -241,8 +242,8 @@ label[for=checkbox] span::after {
   width: 30rem;
   margin: 5rem auto;
   background-color: white;
-  animation: anima ease;
-  transition: display ease 0.8s;
+  visibility: visible;
+  transition: visibility ease 0.8s;
 }
 .formDev .btn {
   color: white;
@@ -272,17 +273,35 @@ label[for=checkbox] span::after {
 table,
 th,
 td {
+  font-family: "Arial Black";
+  font-weight: bolder;
   text-align: center;
-  border: 2px solid #087ceb;
   border-collapse: collapse;
   color: #087ceb;
 }
 
 th,
 td {
+  font-weight: normal;
   padding: 5px;
+  border: 1px solid #087ceb;
 }
 
+td {
+  font-size: 1.4rem;
+  font-family: "Verdana";
+  border: none;
+}
+
+tbody tr:nth-of-type(2n) {
+  background-color: rgba(128, 128, 128, 0.377);
+}
+
+@media screen and (max-width: 550px) {
+  .disappear {
+    display: none;
+  }
+}
 @media screen and (max-width: 300px) {
   .banner {
     height: 20vh;

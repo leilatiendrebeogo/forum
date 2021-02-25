@@ -11,19 +11,25 @@ let formdev_btn2 = document.querySelector(".formdev-btn #formdev-btn");
 
 formdev_btn2.addEventListener("click", (e) => {
   e.preventDefault();
-  formdev_btn2.classList.add("invisible");
-  formdev.classList.remove("invisible");
+  formdev_btn2.classList.toggle("invisible");
+  formdev.classList.toggle("invisible");
+  Array.from(document.querySelectorAll('.first-section,.formerdev-btn,.table_info')).forEach((element)=> element.classList.toggle('invisible'))
 });
 formdev_btn1.addEventListener("click", (e) => {
   e.preventDefault();
 
-  formdev_btn2.classList.remove("invisible");
-  formdev.classList.add("invisible");
+  formdev_btn2.classList.toggle("invisible");
+  formdev.classList.toggle("invisible");
+  Array.from(document.querySelectorAll('.first-section,.formerdev-btn,.table_info')).forEach((element)=> element.classList.toggle('invisible'))
 });
 
-// window.setInterval(function () {
-//   fetch("admin.php");
-// }, 10000);
+window.setInterval(function () {
+  fetch("treat/xhr_fetch.php").then(resp => resp.json()).then((resp)=>{
+    document.querySelector('.members span').innerText=resp.members
+    document.querySelector('.posts span').innerText=resp.posts
+    document.querySelector('.comments span').innerText=resp.comments
+  })
+}, 3000);
 
 let keyUp = (input) => {
   input.addEventListener("keyup", () => {
