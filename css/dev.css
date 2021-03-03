@@ -35,6 +35,12 @@ body {
 .innerPage {
   font-size: 1.6rem;
 }
+.innerPage h3 {
+  font-size: 2.3em;
+  text-align: center;
+  font-family: AUTO;
+  margin: 20px;
+}
 
 .postCard {
   margin: 3rem auto;

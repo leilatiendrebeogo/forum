@@ -5,7 +5,7 @@ let other_comments=document.querySelector('.other-comments');
 form.addEventListener('submit',(e)=>{
     e.preventDefault();
 
-    fetch('treat/comment.php',{
+    fetch('http://localhost/Forum/pages/treat/comment.php',{
         method: 'POST',
         body: new FormData(e.target),
     }).then(()=> form.content.value='')
@@ -16,7 +16,7 @@ setInterval(() => {
     let data=new FormData();
     data.append('post_ID',form.post_ID.value)
     data.append('last_comment_ID',form.last_comment_ID.value)
-    fetch('treat/comment.php',{
+    fetch('http://localhost/Forum/pages/treat/comment.php',{
         method: 'POST',
         body: data,
     }).then((resp)=>resp.json()).then((comments)=>{

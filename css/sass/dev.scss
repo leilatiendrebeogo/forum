@@ -15,8 +15,6 @@ body{
 
 
 
-
-
 .banner{
     width: 100%;
     font-size: 1.6rem;
@@ -44,6 +42,12 @@ body{
 
 .innerPage{
     font-size: 1.6rem;
+    h3{
+        font-size: 2.3em;
+        text-align: center;
+        font-family: AUTO;
+        margin: 20px;
+    }
 }
 
 .postCard{

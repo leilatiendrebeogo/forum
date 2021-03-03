@@ -81,7 +81,7 @@ $comments=CommentsHandler::getPostComment($bd,$_GET['id']);
             <input type="text" name="author_ID" value="<?= $_SESSION['dev_id'] ?>" hidden>
             <input type="text" name="last_comment_ID" value="<?= end($comments)['id'] ?>" hidden>
             <div class="comment-content">
-            <textarea name="content" id="content" cols="30" rows="7" placeholder="Commenter"></textarea>
+            <textarea name="content"http://localhost/Forum/ id="content" cols="30" rows="7" placeholder="Commenter"></textarea>
             <button type="submit">Commenter</button>
             </div>
         </form>
@@ -116,6 +116,6 @@ $comments=CommentsHandler::getPostComment($bd,$_GET['id']);
 
 
 
-<script src="../js/notif.js"></script>
-<script src="../js/comment.js"></script>
+<script src="http://localhost/Forum/js/notif.js"></script>
+<script src="http://localhost/Forum/js/comment.js"></script>
 <?php require('includes/footer.php'); ?>

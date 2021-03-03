@@ -44,7 +44,7 @@ class PostsHandler{
             ON posts.category_ID=categories.id
             WHERE posts.date=(SELECT MAX(posts.date) FROM posts WHERE category_ID=?)';
             $category=$bd->getData('r','SELECT id FROM categories WHERE category_name=?',[$category_or_author_wanted]);
-            $lastPosts=$bd->getData('r',$sql,[$category]);
+            $lastPosts=$bd->getData('r',$sql,[$category['id']]);
 
         } elseif($mode==GET_BY_AUTHORNAME){
             $sql='SELECT posts.id as id,devs.username as author,categories.category_name as category,posts.title as title,posts.post_content as content,DATE_FORMAT(posts.date,"le %d/%m/%y à %h heures %i minutes %s secondes") as date
@@ -55,7 +55,7 @@ class PostsHandler{
             ON posts.category_ID=categories.id
             WHERE posts.date=(SELECT MAX(posts.date) FROM posts WHERE posts.author_name=?)';
             $author=$bd->getData('r','SELECT id FROM devs WHERE username=?',[$category_or_author_wanted]);
-            $lastPosts=$bd->getData('r',$sql,[$author]);
+            $lastPosts=$bd->getData('r',$sql,[$author['id']]);
         } elseif($mode==GET_FOR_ALLCATEGORIES){
             $categories=$bd->getData('r','SELECT id FROM categories ORDER BY id ASC');
             $lastPosts=[];
@@ -90,6 +90,18 @@ class PostsHandler{
         ON posts.category_ID=categories.id
         WHERE posts.id=?',[$id_post]);
         return $post;
+    }
+    public static function getAllCatPosts(DataBase $bd,string $category)
+    {
+
+        $posts=$bd->getData('r','SELECT posts.id as id,devs.username as author,categories.category_name as category,posts.title as title,posts.post_content as content,DATE_FORMAT(posts.date,"le %d/%m/%y à %h heures %i minutes %s secondes") as date
+        FROM posts
+        INNER JOIN devs
+        ON posts.author_ID=devs.id
+        INNER JOIN categories
+        ON posts.category_ID=categories.id
+        WHERE posts.category_ID=(SELECT categories.id from categories WHERE categories.category_name=?) LIMIT 50',[$category]);
+        return $posts;
     }
     
 }

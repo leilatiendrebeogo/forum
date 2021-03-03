@@ -18,9 +18,9 @@ require_once('includes/header.php');
 
 ?>
 <section class="banner d-flex flex-column align-items-center">
-    <h2>Bienvenue ForumPLus</h2>
-    <h4>Forum d'aide et de conseils à l'endroit des développeurs de LacSoft Enterprises</h4>
-    <h5>Postez vos préocupations et questions liées aux développement, Aidez les autres en répondant aux questions posées via les commentaires</h5>
+    <h2>Editez votre publication</h2>
+    <h4>Pour rechercher de l'aide en rapport avec votre problème <br> ou <br> Pour exposer une solution face à un problème que vous avez rencontré</h4>
+    <!-- <h5>Postez vos préocupations et questions liées aux développement, Aidez les autres en répondant aux questions posées via les commentaires</h5> -->
 </section>
 <section class="innerPage">
 <a href="" class="btn btn-danger"><i class="fas fa-arrow-left"></i> Retouner à la page précédente</a>
