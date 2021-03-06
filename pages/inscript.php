@@ -1,9 +1,18 @@
 <?php
-require_once('../session.php');
-
-
-
+session_start();
 require('../config.php');
+if($bd->admin_info() && count($_SESSION)==0)
+  header("Location: connect.php");
+
+if(count($_SESSION)!=0 && isset($_SESSION['role'])){
+  if($_SESSION['role']=='admin')
+    header("Location: admin.php");
+  elseif($_SESSION['role']=='dev')
+    header("Location: dev.php");
+}
+
+
+
 $style=ROOTcss."connect.css";
 $title="Inscription ForumPlus";
 require('includes/header.php'); 

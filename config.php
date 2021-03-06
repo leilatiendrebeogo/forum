@@ -5,15 +5,6 @@ function verifSession(){
 }
 
 
-
-
-
-
-
-
-
-
-
 define("ROOTcss","http://localhost/forum/css/");
 define("ALL",1);
 
@@ -81,12 +72,22 @@ class DataBase{
     {
        
         $adminInfo= $this->getData('r',"SELECT * FROM devs WHERE role='admin'");
-        if(!$adminInfo)
+        if(count($adminInfo)==0)
             header('Location: pages/inscript.php');
         else{
             header('Location: pages/connect.php');
         }
     }
+    public function admin_info()
+    {
+       
+        $adminInfo= $this->getData('r',"SELECT * FROM devs WHERE role='admin'");
+        if(count($adminInfo)>0)
+            return true;
+        else
+            return false;
+    }
+    
     
 }
 $bd=new DataBase();
